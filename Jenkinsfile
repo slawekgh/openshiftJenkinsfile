@@ -4,6 +4,14 @@ try {
           stage('build') {
             openshiftBuild(buildConfig: 'openshift-bc-simple', showBuildLogs: 'true')
           }
+         
+          stage('ship') {
+            openshiftBuild(buildConfig: 'openshift-bc-simple', showBuildLogs: 'true')
+          }
+         
+          stage('run') {
+            openshiftBuild(buildConfig: 'openshift-bc-simple', showBuildLogs: 'true')
+          }
           stage('deploy') {
             //openshiftDeploy(deploymentConfig: 'slawekdeploj')
             //openshiftScale(deploymentConfig: 'slawekdeploj',replicaCount: '5')
